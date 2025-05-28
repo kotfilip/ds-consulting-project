@@ -19,8 +19,8 @@ def run_panel_model(df):
 
     # Independent variables (you can expand this list)
     X = df[['unemployment_rate', 'urbanization', 'gdp_per_capita', 
-            'avg_salary', 'avg_expenditure', 'doctors_per_10k',
-            'pollution', 'age_65_plus', 'covid_period']]
+            'avg_salary', 'doctors_per_10k', 'pollution', 
+            'age_65_plus', 'covid_period']]
     X = sm.add_constant(X)
 
     # Estimate the model with entity fixed effects
