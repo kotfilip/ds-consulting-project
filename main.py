@@ -8,4 +8,4 @@ if __name__ == '__main__':
     df = load_csv('data/data.csv')
     df_clean = preprocess_data(df)
     results = run_panel_model(df_clean)
-    print(results.summary())
+    print(results.summary)
