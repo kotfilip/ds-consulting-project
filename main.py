@@ -1,4 +1,4 @@
-# Główna logika projektu
+# Main project logic
 
 from src.etl.load_data import load_csv
 from src.etl.transform import preprocess_data
@@ -8,4 +8,4 @@ if __name__ == '__main__':
     df = load_csv('data/data.csv')
     df_clean = preprocess_data(df)
     results = run_panel_model(df_clean)
-    print(results.summary())
+    print(results.summary)

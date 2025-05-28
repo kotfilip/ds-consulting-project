@@ -1,16 +1,16 @@
-# Projekt: Analiza śmiertelności w Polsce (2015–2023)
+# Project: Mortality Analysis in Poland (2015–2023)
 
-Repozytorium do projektu z przedmiotu 'Data Science – Consulting Approach'.
+Repository for the final project in the course 'Data Science – Consulting Approach'.
 
-## Struktura
-- `src/` – kod źródłowy
-- `data/` – dane wejściowe i przetworzone
-- `notebooks/` – analiza eksploracyjna, testy modeli
+## Structure
+- `src/` – source code
+- `data/` – raw and processed data
+- `notebooks/` – exploratory analysis and model testing
 
-## Uruchomienie
+## Run the project
 ```bash
 python main.py
 ```
 
-## Wymagane biblioteki
-Wymienione w `requirements.txt`.
+## Required libraries
+Listed in requirements.txt
