@@ -1,4 +1,4 @@
-# Project: Mortality Analysis in Poland (2015–2023)
+# Project: Mortality Analysis in Poland (2017–2023)
 
 Repository for the final project in the course 'Data Science – Consulting Approach'.
 
