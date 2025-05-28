@@ -1,4 +1,4 @@
-# Główna logika projektu
+# Main project logic
 
 from src.etl.load_data import load_csv
 from src.etl.transform import preprocess_data

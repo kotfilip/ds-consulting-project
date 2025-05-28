@@ -1,5 +1,5 @@
-# Tu będą funkcje pomocnicze
+# Helper functions go here
 
 def standardize_region_names(df):
-    # przykładowa funkcja do oczyszczania nazw
+    # example function for cleaning region names
     return df
