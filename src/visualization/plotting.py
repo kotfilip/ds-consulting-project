@@ -51,3 +51,40 @@ def plot_model_coefficients_excl_gdp(results, output_path="figures/model_coeffic
     # Save
     plt.savefig(output_path)
     plt.close()
+
+
+def plot_mortality_trends_by_region(df, regions=None, output_path="figures/mortality_trends_selected_regions.png"):
+    """
+    Creates a line plot of mortality trends over time for selected regions.
+
+    Parameters:
+        df (pd.DataFrame): Preprocessed dataset with 'region', 'year', 'mortality'
+        regions (list): List of regions to include in the plot (optional)
+        output_path (str): Path to save the plot image
+    """
+    import pandas as pd
+
+    # Ensure 'mortality' is numeric
+    df['mortality'] = df['mortality'].astype(str).str.replace(',', '.')
+    df['mortality'] = pd.to_numeric(df['mortality'], errors='coerce')
+
+    # Filter regions if provided
+    if regions is None:
+        regions = ["Mazowieckie", "Śląskie", "Podkarpackie", "Lubelskie"]
+    df_filtered = df[df["region"].isin(regions)]
+
+    # Pivot for plotting
+    pivot_df = df_filtered.pivot_table(index="year", columns="region", values="mortality")
+
+    # Plot
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    plt.figure(figsize=(10, 6))
+    pivot_df.plot(marker='o', linewidth=2)
+    plt.title("Mortality Trends in Selected Regions (2017–2023)")
+    plt.ylabel("Mortality Rate")
+    plt.xlabel("Year")
+    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.legend(title="Region", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+    plt.savefig(output_path)
+    plt.close()
