@@ -5,7 +5,6 @@ Repository for the final project in the course 'Data Science – Consulting Appr
 ## Structure
 - `src/` – source code
 - `data/` – raw and processed data
-- `notebooks/` – exploratory analysis and model testing
 
 ## Run the project
 ```bash
