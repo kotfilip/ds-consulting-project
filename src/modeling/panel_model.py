@@ -1,5 +1,6 @@
 from linearmodels.panel import PanelOLS
 import statsmodels.api as sm
+import numpy as np
 
 def run_panel_model(df):
     """
@@ -17,6 +18,9 @@ def run_panel_model(df):
     # Dependent variable
     y = df['mortality']
 
+    # Log-transform GDP per capita
+    df['gdp_per_capita'] = df['gdp_per_capita'].apply(lambda x: np.log(x) if x > 0 else None)
+    
     # Independent variables (you can expand this list)
     X = df[['unemployment_rate', 'urbanization', 'gdp_per_capita', 
             'avg_salary', 'doctors_per_10k', 'pollution', 
